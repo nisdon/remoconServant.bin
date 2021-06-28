@@ -2,117 +2,69 @@
 ## 1. はじめに
 これは、BitTradeOne製 USB接続赤外線リモコンKIT専用のファームウェアです。  
 メディアプレイヤーアプリケーションKodiの制御を想定しています。  
-以下の赤外線リモコン送信機を対象としています。
-- plex製TVチューナー（s3u2等）付属リモコン
-- SKNET製TVチューナー hdus付属リモコン
+対応する赤外線リモコン送信機は以下の製品です。
+
+- plex製TVチューナー（w3u4等）付属リモコン
 
 ## 2. 特徴として
-- 移動キーは一定時間押下げでリピートします。
-- Kodiの長押しボタンに対応しています。
+- 上下左右の移動ボタンは一定時間押下げでリピートします。
+- 決定ボタン、音量ボタンはKodiの長押しボタンに対応しています。
 
 ## 3. キーの割り当て
-以下の定義に固定されています。  
-カスタマイズする場合は、HEXファイルの対象となる値を書き換えてください。
+ボタン名称に対応したkodiのショートカットキーを設定。
+用途のないボタンにはファンクションキーを割り当てています。
+必要な機能があればファンクションキーを利用できます。
 
 ### Plex製リモコン
-| CTRL(1) or SHIFT(2) | 対応ボタン | 出力キー |
+| 対応ボタン | 出力キー(ctrl:c shift:s) | 機能 |
 ----|----|----
-|0x02 	|Pow			|F14|
-|0x03 	|Player On	|F11|
-|0x03 	|Player Off	|F12|
-|0x01 	|Rec		|F23|
-|0x01 	|Epg		|F20|
-|0x00 	|Tv			|F22|
-|0x00 	|Dvd		|F23|
-|0x00 	|Back		|Esc|
-|0x01 	|Cc			|F18|
-|0x02 	|Mute		|F15|
-|0x03 	|Info		|I|
-|0x01 	|音声切替	|F19|
-|0x01 	|全画面		|F17|
-|0x00 	|Left Arrow	|←|
-|0x00 	|Right Arrow	|→|
-|0x00 	|Up Arrow	|↑|
-|0x00 	|Down Arrow	|↓|
-|0x00 	|Ok			|Enter|
-|0x03 	|Play		|P|
-|0x01 	|Pause		|P|
-|0x03 	|Stop		|S|
-|0x02 	|Rec			|F22|
-|0x03 	|<<			|B|
-|0x03 	|>>			|F|
-|0x03 	|<			|F15|
-|0x03 	|>			|F18|
-|0x02 	|1			|F17|
-|0x02 	|2			|F18|
-|0x02 	|3			|F19|
-|0x02 	|4			|F20|
-|0x02 	|5			|F21|
-|0x02 	|6			|F22|
-|0x02 	|7			|F23|
-|0x02 	|8			|F24|
-|0x01 	|9			|F13|
-|0x01 	|0			|F14|
-|0x02 	|*			|F16|
-|0x01 	|#			|F15|
-|0x01 	|CH+			|Num 8|
-|0x01 	|CH-			|Num 2|
-|0x00 	|VOl+		|F10|
-|0x00 	|VOl-		|F9|
-|0x03 	|放送切替	|F19|
-|0x03 	|クリア		|C|
-|0x03 	|入力		|F20|
-|0x03 	|data		|D|
-|0x03 	|青			|F21|
-|0x03 	|赤			|F22|
-|0x03 	|緑			|F23|
-|0x03 	|黄			|F24|
-
-### HDUSリモコン
-| CTRL(1) or SHIFT(2) | 対応ボタン | 出力キー |
-----|----|----
-|	0x02	|Pow			|F14|
-|	0x03	|画面表示		|F11|
-|	0x03	|消音			|F12|
-|	0x02	|1			|F17|
-|	0x02	|2			|F18|
-|	0x02	|3			|F19|
-|	0x02	|4			|F20|
-|	0x02	|5			|F21|
-|	0x02	|6			|F22|
-|	0x02	|7			|F23|
-|	0x02	|8			|F24|
-|	0x01	|9			|F13|
-|	0x01	|10			|F14|
-|	0x02	|11			|F16|
-|	0x01	|12			|F15|
-|	0x00	|音量 +		|F10|
-|	0x00	|音量 -		|F9|
-|	0x01	|チャンネル↑	|Num8|
-|	0x01	|チャンネル↓	|Num2|
-|	0x03	|メニュー		|I|
-|	0x01	|全画面		|F17|
-|	0x01	|字幕			|F18|
-|	0x01	|音声切替		|F19|
-|	0x01	|EPG			|F20|
-|	0x00	|戻る			|Esc|
-|	0x02	|録画			|F22|
-|	0x03	|メモ			|D|
-|	0x03	|停止			|S|
-|	0x03	|再生			|P|
-|	0x01	|一時停止		|P|
-|	0x03	|<<			|B|
-|	0x03	|<			|F15|
-|	0x03	|>			|F18|
-|	0x03	|>>			|F|
-|	0x03	|しおり		|F19|
-|	0x03	|ジャンプ		|F20|
-|	0x03	|青			|F21|
-|	0x03	|赤			|F22|
-|	0x03	|緑			|F23|
-|	0x03	|黄			|F24|
-|	0x00	|Left			|←|
-|	0x00	|Right		|→|
-|	0x00	|Up			|↑|
-|	0x00	|Down			|↓|
-|	0x00	|Ok			|Enter|
+|Pow			|power		|ActivateWindow(ShutdownMenu)|
+|Player On		|F1 + c		|-|
+|Player Off		|F2 + c		|-|
+|Rec			|k			|ActivateWindow(TVRecordings)|
+|Epg			|e			|ActivateWindow(TVGuide)|
+|Tv				|h			|ActivateWindow(TVChannels)|
+|Dvd			|b			|ActivateWindow(TVTimers)|
+|Back			|backspace	|Back|
+|Cc				|F3 + c		|-|
+|Mute			|mute		|Mute|
+|Info			|i			|info|
+|音声切替		|F4 + c		|-|
+|全画面			|F5 + c		|-|
+|Left Arrow		|←			|Left|
+|Right Arrow	|→			|Right|
+|Up Arrow		|↑			|Up|
+|Down Arrow		|↓			|Down|
+|Ok				|enter		|Select|
+|Play			|P			|Play|
+|Pause			|space		|Pause|
+|Stop			|x			|Stop|
+|Rec			|F6 + c		|-|
+|<<				|r			|Rewind|
+|>>				|f			|FastForward|
+|<				|,			|SkipPrevious|
+|>				|.			|SkipNext|
+|1				|1			|Number1|
+|2				|2			|Number2|
+|3				|3			|Number3|
+|4				|4			|Number4|
+|5				|5			|Number5|
+|6				|6			|Number6|
+|7				|7			|Number7|
+|8				|8			|Number8|
+|9				|9			|Number9|
+|0				|0			|Number0|
+|*				|*(6 + s)	|-|
+|#				|#(3 + s)	|-|
+|CH+			|pageup		|ChannelUp|
+|CH-			|pagedown	|ChannelDown|
+|VOl+			|volume_up	|VolumeUp|
+|VOl-			|volume_down|VolumeDown|
+|放送切替		|F7 + c		|-|
+|クリア			|F8 + c		|-|
+|入力			|F9 + c		|-|
+|data			|F10 + c	|-|
+|青				|F1			|-|
+|赤				|F2			|-|
+|緑				|F3			|-|
+|黄				|F4			|-|
