@@ -36,7 +36,7 @@
 |Up Arrow		|↑			|Up|
 |Down Arrow		|↓			|Down|
 |Ok				|enter		|Select|
-|Play			|P			|Play|
+|Play			|p			|Play|
 |Pause			|space		|Pause|
 |Stop			|x			|Stop|
 |Rec			|F6 + c		|-|
